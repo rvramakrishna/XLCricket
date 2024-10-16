@@ -1,0 +1,55 @@
+Option Explicit
+Sub Bowl()
+' Bowl Macro
+' Bowling
+    ActiveCell.FormulaR1C1 = "=RANDBETWEEN(1,10)"
+    ActiveCell.Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues
+    Application.CutCopyMode = False
+    ActiveCell.Offset(0, 1).Range("A1").Select
+End Sub
+
+Sub Bat()
+' Bat Macro
+' Batting
+    ActiveCell.FormulaR1C1 = "=RANDBETWEEN(1,10)"
+    ActiveCell.Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues
+    Application.CutCopyMode = False
+    ActiveCell.Offset(1, -1).Range("A1").Select
+End Sub
+
+Sub Clear()
+' Clear Macro
+' Clears the sheet for next match.
+    Range("H8:I67").ClearContents
+    Range("Q4").ClearContents
+    Range("T4:T5").ClearContents
+    Range("U4:V4").ClearContents
+    Range("Z7").ClearContents
+    Range("T4").Select
+End Sub
+
+Sub New_innings()
+' New_innings Macro
+' Clears the sheet for new innings.
+    Range("Q4").FormulaR1C1 = "=RC[-9]"
+    Range("Q4").Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues
+    Range("H8:I67").ClearContents
+    Range("H8").Select
+End Sub
+
+Sub Toss()
+' Toss macro
+' Randomly gives between 1 or 2 for toss.
+    Range("V4").FormulaR1C1 = "=RANDBETWEEN(1,2)"
+    Range("V4").Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues
+    Application.CutCopyMode = False
+    Range("Z7").Select
+End Sub
