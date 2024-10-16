@@ -1,2 +1,2 @@
 # XLcricket
-A way to play cricket in excel (Inspired from hand/book cricket)
+A way to play cricket in Microsoft Office Excel (Inspired by hand/book cricket)
